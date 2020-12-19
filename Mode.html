@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="bg">
+   <head>
+        <meta charset = "utf-8">
+        <title>Mode</title>
+        <style>
+            @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+            .bg{
+                background-image: url("temp.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+            }
+            .easy{
+                font-size: 36px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:firebrick;
+                font-weight: bold;
+                color: white;
+                position: fixed;
+                left:30%;
+                top:90%;
+                margin-left: -160px;
+                margin-top: -100px;
+                width: 200px;
+                height:66px;
+                opacity: 0.8;
+                box-shadow: 10px 10px 5px rgba(0,0,0,8);
+                border-radius: 10%;
+               
+                /*transition: 1s;*/
+            }
+            .easy span{
+                cursor: pointer;
+                position: relative;
+                transition: 0.5s;
+            }
+            .easy span:after {
+                font-size: 36px;
+                content: '\2620';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .easy:hover span {
+                padding-right: 75px;
+            }
+            .easy:hover span:after {
+                opacity: 0.8;
+                right: 0;
+            }
+            .easy:hover{
+                transform: scale(1.3);
+
+            }
+            .normal{
+                font-size: 36px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:firebrick;
+                font-weight: bold;
+                color: white;
+                position: fixed;
+                left:50%;
+                top:90%;
+                margin-left: -160px;
+                margin-top: -100px;
+                width: 200px;
+                height: 66px;
+                opacity: 0.8;
+                box-shadow: 10px 10px 5px rgba(0,0,0,8);
+                border-radius: 10%;
+                /*transition: 1s;*/
+            }
+            .normal span{
+                cursor: pointer;
+                position: relative;
+                transition: 0.5s;
+            }
+            .normal span:after {
+                font-size: 36px;
+                content: '\2620';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .normal:hover span {
+                padding-right: 75px;
+            }
+            .normal:hover span:after {
+                opacity: 0.8;
+                right: 0;
+            }
+            .normal:hover{
+                transform: scale(1.3);
+
+            }
+            .hard{
+                font-size: 36px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:firebrick;
+                font-weight: bold;
+                color: white;
+                position: fixed;
+                left:70%;
+                top:90%;
+                margin-left: -160px;
+                margin-top: -100px;
+                width: 200px;
+                height: 66px;
+                opacity: 0.8;
+                box-shadow: 10px 10px 5px rgba(0,0,0,8);
+                border-radius: 10%;
+                /*transition: 1s;*/
+            }
+            .hard span{
+                cursor: pointer;
+                position: relative;
+                transition: 0.5s;
+            }
+            .hard span:after {
+                font-size: 36px;
+                content: '\2620';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .hard:hover span {
+                padding-right: 75px;
+            }
+            .hard:hover span:after {
+                opacity: 0.8;
+                right: 0;
+            }
+            .hard:hover{
+                transform: scale(1.3);
+
+            }
+            .title{
+                font-style:normal;
+                font-size: 256px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                position: fixed;
+                background: -webkit-linear-gradient(bottom,rgb(69, 69, 73) 0,rgb(120, 121, 128) 26%,rgb(141, 142, 151) 50%, rgb(169, 170, 180) 76% ,rgb(182, 183, 194) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                left:45%;
+                top:25%;
+                margin-left: -450px;
+                margin-top: -200px;
+                opacity: 0.75;
+            }
+            
+            .rule{
+                font-style:normal;
+                font-size: 42px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                position: fixed;
+                color:rgb(207, 226, 32);
+                left:50%;
+                top:25%;
+                margin-left: -450px;
+                margin-top: -200px;
+                opacity: 0.75;
+            }
+            .title{
+                font-style:normal;
+                font-size: 100px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                position: fixed;
+                background: -webkit-linear-gradient(bottom,rgb(69, 69, 73) 0,rgb(120, 121, 128) 26%,rgb(141, 142, 151) 50%, rgb(169, 170, 180) 76% ,rgb(182, 183, 194) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                left:63%;
+                top:25%;
+                margin-left: -450px;
+                margin-top: -200px;
+                opacity: 0.75;
+            }
+            ul {
+                list-style-image: url(gun.png);/* Remove default bullets */
+            }
+            .k{
+                box-sizing: border-box; 
+                background-color: blueviolet;
+                position:fixed;
+                width: 800px; height: 400px;
+                left:20%;
+                top:15%;
+                border-radius: 10%;
+                border-style:ridge;
+                border-color: rgb(146, 141, 155);
+            }
+            .back{
+                font-size: 20px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:firebrick;
+                font-weight: bold;
+                color: white;
+                position: fixed;
+                left:12%;
+                top:20%;
+                margin-left: -160px;
+                margin-top: -100px;
+                width: 100px;
+                height: 33px;
+                opacity: 0.8;
+                box-shadow: 10px 10px 5px rgba(0,0,0,8);
+                border-radius: 10%;
+              
+                /*transition: 1s;*/
+            }  
+              .back span{
+                cursor: pointer;
+                position: relative;
+                transition: 0.5s;
+            }
+            .back span:after {
+                font-size: 20px;
+                content: '\2620 ';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                left: -20px;
+                transition: 0.5s;
+            }
+            .back:hover span {
+                padding-left: 30px;
+            }
+            .back:hover span:after {
+                opacity: 0.8;
+                left: 0;
+            }
+          
+          
+            .back:hover{
+                transform: scale(1.3);
+
+            }
+      
+        </style>
+        <script>
+          
+        </script>
+    </head>
+    <body>
+        <h1 class="title">遊戲規則</h1>
+        <br><br>
+        <h1 class="rule">
+            <div class='k'>
+            <ul>
+            
+            <li>一共30名敵人</li>
+            <li>使用滑鼠點擊敵人，將敵人消滅</li>
+            <li>敵人出現後一段時間會逃跑</li>
+            <li>隨著難易度變高，敵人逃跑的速度加快</li>
+            <li>做好準備就踏上天堂路吧</li>
+         </ul>
+        </div>
+        </h1>
+    </body>
+<footer>
+    <a href="Start.html"><button class="back" id="back"><span>返回</span></button></a>
+    <a href="MAP_EASY.html""><button class="easy" id="easy"><span>簡單</span></button></a>
+    <a href="MAP_MEDIEUM.html"><button class="normal" id="normal"><span>普通</span></button></a>
+    <a href="MAP_HARD.html"><button class="hard" id="hard"><span>困難</span></button></a>
+</footer>
+</html>
