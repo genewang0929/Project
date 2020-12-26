@@ -164,7 +164,7 @@
                 display: none;
                 font-size: 20px;
                 font-family: Noto Sans TC, Perpetua, serif;
-                background-color:firebrick;
+                background-color:rgb(27, 27, 139);
                 font-weight: bold;
                 color: white;
                 position: fixed;
@@ -323,7 +323,6 @@
                         });
                         var next=document.getElementById("next");
                         next.style.display="block";
-                        next.addEventListener( "click", next1, false );
                     }
                     else{
                         $('.img1').first().fadeIn(1000, function(){
@@ -333,9 +332,6 @@
                     reload1.style.display="block";
                     reload1.addEventListener( "click", reload, false );
                 }
-            }
-            function next1(){
-
             }
             window.addEventListener("load",s,false);
         </script>
@@ -349,7 +345,7 @@
 <footer>
     <button class="start" id="start" onclick="start(this)"><span id=>開始</span></button>
     <button class="start2" id="start2" ><span>重新開始</span></button>
-    <button class="next" id="next"><span>下一關</span></button>
+    <a href="map3_superhard.html"><button class="next" id="next"><span>下一關</span></button></a>
     <a href="https://genewang0929.github.io/Project/Start.html"><button class="back" id="back"><span>返回</span></button></a>
 </footer>
 </html>
