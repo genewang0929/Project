@@ -31,28 +31,32 @@
                
                 /*transition: 1s;*/
             }
-            .easy span{
-                cursor: pointer;
-                position: relative;
-                transition: 0.5s;
-            }
-            .easy span:after {
-                font-size: 36px;
-                content: '\2620';
-                position: absolute;
-                opacity: 0;
-                top: 0;
-                right: -20px;
-                transition: 0.5s;
-            }
-            .easy:hover span {
-                padding-right: 75px;
-            }
-            .easy:hover span:after {
-                opacity: 0.8;
-                right: 0;
-            }
+           
             .easy:hover{
+                transform: scale(1.3);
+
+            }
+            .superhard{
+                font-size: 36px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:firebrick;
+                font-weight: bold;
+                color: white;
+                position: fixed;
+                left:88%;
+                top:90%;
+                margin-left: -160px;
+                margin-top: -100px;
+                width: 200px;
+                height:66px;
+                opacity: 0.8;
+                box-shadow: 10px 10px 5px rgba(0,0,0,8);
+                border-radius: 10%;
+                display:none;
+                /*transition: 1s;*/
+            }
+           
+            .superhard:hover{
                 transform: scale(1.3);
 
             }
@@ -73,28 +77,9 @@
                 box-shadow: 10px 10px 5px rgba(0,0,0,8);
                 border-radius: 10%;
                 /*transition: 1s;*/
+                
             }
-            .normal span{
-                cursor: pointer;
-                position: relative;
-                transition: 0.5s;
-            }
-            .normal span:after {
-                font-size: 36px;
-                content: '\2620';
-                position: absolute;
-                opacity: 0;
-                top: 0;
-                right: -20px;
-                transition: 0.5s;
-            }
-            .normal:hover span {
-                padding-right: 75px;
-            }
-            .normal:hover span:after {
-                opacity: 0.8;
-                right: 0;
-            }
+      
             .normal:hover{
                 transform: scale(1.3);
 
@@ -117,27 +102,7 @@
                 border-radius: 10%;
                 /*transition: 1s;*/
             }
-            .hard span{
-                cursor: pointer;
-                position: relative;
-                transition: 0.5s;
-            }
-            .hard span:after {
-                font-size: 36px;
-                content: '\2620';
-                position: absolute;
-                opacity: 0;
-                top: 0;
-                right: -20px;
-                transition: 0.5s;
-            }
-            .hard:hover span {
-                padding-right: 75px;
-            }
-            .hard:hover span:after {
-                opacity: 0.8;
-                right: 0;
-            }
+
             .hard:hover{
                 transform: scale(1.3);
 
@@ -245,10 +210,77 @@
                 transform: scale(1.3);
 
             }
-      
+            .cheat{
+                font-size: 12px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                background-color:firebrick;
+                font-weight: bold;
+                color: white;
+                position: fixed;
+                left:95%;
+                top:95%;
+                margin-left: -160px;
+                margin-top: -100px;
+                width: 100px;
+                height: 33px;
+                opacity: 0.8;
+                box-shadow: 10px 10px 5px rgba(0,0,0,8);
+                border-radius: 10%;
+              
+                /*transition: 1s;*/
+            }  
+              .cheat span{
+                cursor: pointer;
+                position: relative;
+                transition: 0.5s;
+            }
+            .cheat span:after {
+                font-size: 12px;
+                content: '\2620 ';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .cheat:hover span {
+                padding-right: 30px;
+            }
+            .cheat:hover span:after {
+                opacity: 0.8;
+                right: 0;
+            }
+          
+          
+            .cheat:hover{
+                transform: scale(1.3);
+
+            }
         </style>
         <script>
-          
+            function detect(){
+                for(let i = localStorage.length - 1; i >= 0; i--){
+                    if(localStorage.key(i).startsWith("easy"))
+                        document.getElementById("normal").disabled=false;
+                    if(localStorage.key(i).startsWith("normal"))
+                        document.getElementById("hard").disabled=false;
+                    if(localStorage.key(i).startsWith("hard"))
+                        document.getElementById("superhard").disabled=false;
+                }
+            }
+            function cheating(){
+                var a=window.prompt("輸入作弊碼");
+                if(a=='馬叔叔好帥'){
+                    window.alert("作弊成功");
+                    document.getElementById("normal").disabled=false;
+                    document.getElementById("hard").disabled=false;
+                    document.getElementById("superhard").style.display="block";
+                    document.getElementById("cheat").style.display="none";
+                }
+                else
+                    window.alert("密碼錯誤");
+            }
+            window.addEventListener("load", detect, false);
         </script>
     </head>
     <body>
@@ -269,8 +301,10 @@
     </body>
 <footer>
     <a href="Start.html"><button class="back" id="back"><span>返回</span></button></a>
-    <a href="MAP_EASY.html"><button class="easy" id="easy"><span>簡單</span></button></a>
-    <a href="MAP_MEDIEUM.html"><button class="normal" id="normal"><span>普通</span></button></a>
-    <a href="MAP_HARD.html"><button class="hard" id="hard"><span>困難</span></button></a>
+    <a href="MAP_EASY.html"><button type ="button" class="easy" id="easy">簡單</button></a>
+    <a href="MAP_MEDIEUM.html"><button class="normal" id="normal" disabled>普通</button></a>
+    <a href="MAP_HARD.html"><button class="hard" id="hard" disabled>困難</button></a>
+    <a href="MAP_SUPERHARD.html"><button class="superhard" id="superhard" >超困難</button></a>
+    <button class="cheat" id="cheat" onclick="cheating()"><span>我要作弊</span></button>
 </footer>
 </html>
