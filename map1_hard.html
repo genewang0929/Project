@@ -269,6 +269,13 @@
                 top:30%;left:23%;
                 display:none;
             }
+            .img3{
+                font-size: 20px;
+                font-family: Noto Sans TC, Perpetua, serif;
+                position: fixed;
+                top:0%;left:87%;
+                display:none;
+            }
             #start2{
                 display: none;
             }
@@ -296,6 +303,10 @@
             function got(){
                 shot++;
                 document.getElementById("target").innerHTML="";
+                $('.img3').first().fadeIn(0, function(){
+                    });
+                $('.img3').first().fadeOut(500, function(){
+                    })
             }
             function start2(){
                 console.log("aaaa");
@@ -310,7 +321,7 @@
                 while(index3>50 || index3 < 10)                       
                     index3 =Math.floor( Math.random() * 100 );
                 var y =10*index3;
-                output+="<p><img src='target.png' onclick= 'got()' width='"+y+"px' height='"+y+"px' style='position: fixed;left:"+index1+"%;top:"+index2+"%;'></p>";
+                output+="<p><img src='target.png' onclick= 'got(this)' width='"+y+"px' height='"+y+"px' style='position: fixed;left:"+index1+"%;top:"+index2+"%;'></p>";
                 console.log(output);
                 document.getElementById("target").innerHTML=output;
                 document.getElementById("score").innerHTML= "<h2 style= 'left: 90%; top: 5%;'>打中 : " + shot + " 隻</h2>"+"<h2 style= 'left: 80%; top: 5%;'>剩下 : " + num + " 隻</h2>";
@@ -340,6 +351,7 @@
     <body>
        <div id="target"></div>
        <div id="score"></div>
+       <div class="img3"><img src='+1.png' width=250px height=250px></div>
        <div class="img1"><img src='gameover.jpg' width=800px height=300px></div>
        <div class="img2"><img src='youwin.jpg' width=800px height=300px></div>
     </body>
